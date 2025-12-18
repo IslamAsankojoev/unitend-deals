@@ -152,7 +152,7 @@ export default function Home() {
         <div className="container flex justify-between gap-4">
           {categories.map((categorie) => (
             <button
-              className="flex items-center gap-2 rounded-3xl bg-[#F3F9FB] px-4 py-2 hover:bg-black"
+              className="rounded-3xl bg-[#F3F9FB] px-4 py-2 hover:bg-black"
               key={categorie}
             >
               <Typography
@@ -160,23 +160,7 @@ export default function Home() {
                 variant="text-categories"
               >
                 {categorie}
-              </Typography>
-
-              <svg
-                width="12"
-                height="7"
-                viewBox="0 0 12 7"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M11.25 0.75L6 6L0.75 0.75"
-                  stroke="#000"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+              </Typography>{' '}
             </button>
           ))}
         </div>
@@ -387,7 +371,7 @@ export default function Home() {
 
       {/* Shop section */}
 
-      <div className="shop-section container flex flex-col gap-6">
+      <div className="shop-section container mb-10 flex flex-col gap-6">
         <Typography
           className="font-lato text-title-lg font-extrabold text-[#191C1F]"
           variant="text-title"
@@ -552,67 +536,603 @@ export default function Home() {
       </div>
 
       {/* deals section */}
-      <div className="deals-section">
-        {/* timing */}
-        <div className="deals-timing">
-          <Typography variant="text-title" className="text-black">
-            TODAY'S DEALS OF THE DAY
-          </Typography>
-          <div className="ending-time">
-            <Typography variant="text-faq" className="text-black">
-              Deals ends in
+      <div className="deals-section mb-10">
+        <div className="container">
+          {/* deals timing */}
+          <div className="deals-timing mb-7 flex items-center justify-between">
+            <Typography
+              variant="text-title"
+              className="font-lato text-3xl font-extrabold"
+            >
+              TODAY'S DEALS OF THE DAY
             </Typography>
-            <button>
-              <Typography variant="text-faq" className="text-black">
-                16d:21h:57m:23s
+            <div className="ending-time flex items-center justify-between gap-4">
+              <Typography
+                variant="text-faq"
+                className="text-bold text-lg font-semibold"
+              >
+                Deals ends in
               </Typography>
-            </button>
-            <button>
-              <Typography variant="text-faq" className="text-black">
-                VIEW ALL{' '}
+              <button className="min-h-11.5 rounded-[9px] bg-[#FCBD01]">
+                <Typography
+                  variant="text-faq"
+                  className="text-card-title font-lato flex items-center justify-between px-6 font-extrabold text-black"
+                >
+                  <span className="mr-2">16d :</span>
+                  <span className="mr-2">21h :</span>
+                  <span className="mr-2">57m :</span>
+                  <span className="mr-2">23s</span>
+                </Typography>
+              </button>
+              <button className="min-h-12 min-w-32 rounded-[9px] bg-[#FCBD01]">
+                <Typography
+                  className="text-[13px] font-semibold"
+                  variant="text_cardCaption"
+                >
+                  VIEW ALL
+                </Typography>
+              </button>
+            </div>
+          </div>
+
+          {/* deals cards */}
+
+          <div className="deals-cards-container container flex items-center justify-center gap-4">
+            {/* card1 */}
+            <div className="deals-card flex-col items-center">
+              {/* card image */}
+              <div className="card-image flex">
+                <div className="image-placeholder flex min-h-78.75 min-w-79.5 items-center justify-center rounded-[28px] bg-[#FAFAFA] p-2">
+                  <div className="image-block relative flex min-h-83.75 min-w-75.5 items-center justify-center rounded-[26px] bg-[#ECEDEF]">
+                    <button className="image-badge py- absolute top-0 left-0 min-h-9.5 min-w-14.5 rounded-tl-3xl rounded-br-3xl bg-[#FCBD01] px-4">
+                      <Typography variant="text-faq" className="text-white">
+                        New
+                      </Typography>
+                    </button>
+                    <Image
+                      className="rounded-[18px]"
+                      src="/assets/img/card-image1.jpg"
+                      alt="cardImg"
+                      width={204}
+                      height={266}
+                    ></Image>
+                  </div>
+                </div>
+              </div>
+
+              {/* card descript */}
+
+              <div className="card-details flex-col">
+                <div className="card-timing pt-2">
+                  <Typography
+                    variant="text-faq"
+                    className="text-card-badge text-[#397CFF]"
+                  >
+                    Flash Deal Ends in 5 Hours !
+                  </Typography>
+
+                  <div className="progress min-h-8px max-w-79.5 rounded-md bg-[#CFDFFF]">
+                    <div
+                      className="progress-bar h-1.5 max-w-[60%] rounded-md bg-[#397CFF] transition-all duration-300"
+                      role="progressbar"
+                    ></div>
+                  </div>
+                </div>
+
+                <Typography
+                  variant="text-faq"
+                  className="text-dealCard-title mt-2 max-w-79.5 font-extrabold text-black"
+                >
+                  ADIDAS 4DFWD X PARLEY RUNNING SHOES{' '}
+                </Typography>
+                <button className="py-2s mt-3 min-h-12 min-w-79 rounded-lg bg-[#232321] px-4">
+                  <Typography
+                    variant="text-cardPrice"
+                    className="font-medium text-white"
+                  >
+                    BUY NOW -
+                    <span className="ml-2 font-medium text-[#FFA52F]">
+                      $250.00
+                    </span>
+                  </Typography>
+                </button>
+              </div>
+            </div>
+            {/* card2 */}
+            <div className="deals-card flex-col items-center">
+              {/* card image */}
+              <div className="card-image flex">
+                <div className="image-placeholder flex min-h-78.75 min-w-79.5 items-center justify-center rounded-[28px] bg-[#FAFAFA] p-2">
+                  <div className="image-block relative flex min-h-83.75 min-w-75.5 items-center justify-center rounded-[26px] bg-[#ECEDEF]">
+                    <button className="image-badge py- absolute top-0 left-0 min-h-9.5 min-w-14.5 rounded-tl-3xl rounded-br-3xl bg-[#FCBD01] px-4">
+                      <Typography variant="text-faq" className="text-white">
+                        New
+                      </Typography>
+                    </button>
+                    <Image
+                      className="rounded-[18px]"
+                      src="/assets/img/card-image1.jpg"
+                      alt="cardImg"
+                      width={204}
+                      height={266}
+                    ></Image>
+                  </div>
+                </div>
+              </div>
+
+              {/* card descript */}
+
+              <div className="card-details flex-col">
+                <div className="card-timing pt-2">
+                  <Typography
+                    variant="text-faq"
+                    className="text-card-badge text-[#397CFF]"
+                  >
+                    Flash Deal Ends in 5 Hours !
+                  </Typography>
+
+                  <div className="progress min-h-8px max-w-79.5 rounded-md bg-[#CFDFFF]">
+                    <div
+                      className="progress-bar h-1.5 max-w-[60%] rounded-md bg-[#397CFF] transition-all duration-300"
+                      role="progressbar"
+                    ></div>
+                  </div>
+                </div>
+
+                <Typography
+                  variant="text-faq"
+                  className="text-dealCard-title mt-2 max-w-79.5 font-extrabold text-black"
+                >
+                  ADIDAS 4DFWD X PARLEY RUNNING SHOES{' '}
+                </Typography>
+                <button className="py-2s mt-3 min-h-12 min-w-79 rounded-lg bg-[#232321] px-4">
+                  <Typography
+                    variant="text-cardPrice"
+                    className="font-medium text-white"
+                  >
+                    BUY NOW -
+                    <span className="ml-2 font-medium text-[#FFA52F]">
+                      $250.00
+                    </span>
+                  </Typography>
+                </button>
+              </div>
+            </div>
+            {/* card3 */}
+            <div className="deals-card flex-col items-center">
+              {/* card image */}
+              <div className="card-image flex">
+                <div className="image-placeholder flex min-h-78.75 min-w-79.5 items-center justify-center rounded-[28px] bg-[#FAFAFA] p-2">
+                  <div className="image-block relative flex min-h-83.75 min-w-75.5 items-center justify-center rounded-[26px] bg-[#ECEDEF]">
+                    <button className="image-badge py- absolute top-0 left-0 min-h-9.5 min-w-14.5 rounded-tl-3xl rounded-br-3xl bg-[#FCBD01] px-4">
+                      <Typography variant="text-faq" className="text-white">
+                        New
+                      </Typography>
+                    </button>
+                    <Image
+                      className="rounded-[18px]"
+                      src="/assets/img/card-image1.jpg"
+                      alt="cardImg"
+                      width={204}
+                      height={266}
+                    ></Image>
+                  </div>
+                </div>
+              </div>
+
+              {/* card descript */}
+
+              <div className="card-details flex-col">
+                <div className="card-timing pt-2">
+                  <Typography
+                    variant="text-faq"
+                    className="text-card-badge text-[#397CFF]"
+                  >
+                    Flash Deal Ends in 5 Hours !
+                  </Typography>
+
+                  <div className="progress min-h-8px max-w-79.5 rounded-md bg-[#CFDFFF]">
+                    <div
+                      className="progress-bar h-1.5 max-w-[60%] rounded-md bg-[#397CFF] transition-all duration-300"
+                      role="progressbar"
+                    ></div>
+                  </div>
+                </div>
+
+                <Typography
+                  variant="text-faq"
+                  className="text-dealCard-title mt-2 max-w-79.5 font-extrabold text-black"
+                >
+                  ADIDAS 4DFWD X PARLEY RUNNING SHOES{' '}
+                </Typography>
+                <button className="py-2s mt-3 min-h-12 min-w-79 rounded-lg bg-[#232321] px-4">
+                  <Typography
+                    variant="text-cardPrice"
+                    className="font-medium text-white"
+                  >
+                    BUY NOW -
+                    <span className="ml-2 font-medium text-[#FFA52F]">
+                      $250.00
+                    </span>
+                  </Typography>
+                </button>
+              </div>
+            </div>
+
+            {/* card4 */}
+            <div className="deals-card flex-col items-center">
+              {/* card image */}
+              <div className="card-image flex">
+                <div className="image-placeholder flex min-h-78.75 min-w-79.5 items-center justify-center rounded-[28px] bg-[#FAFAFA] p-2">
+                  <div className="image-block relative flex min-h-83.75 min-w-75.5 items-center justify-center rounded-[26px] bg-[#ECEDEF]">
+                    <button className="image-badge py- absolute top-0 left-0 min-h-9.5 min-w-14.5 rounded-tl-3xl rounded-br-3xl bg-[#FCBD01] px-4">
+                      <Typography variant="text-faq" className="text-white">
+                        New
+                      </Typography>
+                    </button>
+                    <Image
+                      className="rounded-[18px]"
+                      src="/assets/img/card-image1.jpg"
+                      alt="cardImg"
+                      width={204}
+                      height={266}
+                    ></Image>
+                  </div>
+                </div>
+              </div>
+
+              {/* card descript */}
+
+              <div className="card-details flex-col">
+                <div className="card-timing pt-2">
+                  <Typography
+                    variant="text-faq"
+                    className="text-card-badge text-[#397CFF]"
+                  >
+                    Flash Deal Ends in 5 Hours !
+                  </Typography>
+
+                  <div className="progress min-h-8px max-w-79.5 rounded-md bg-[#CFDFFF]">
+                    <div
+                      className="progress-bar h-1.5 max-w-[60%] rounded-md bg-[#397CFF] transition-all duration-300"
+                      role="progressbar"
+                    ></div>
+                  </div>
+                </div>
+
+                <Typography
+                  variant="text-faq"
+                  className="text-dealCard-title mt-2 max-w-79.5 font-extrabold text-black"
+                >
+                  ADIDAS 4DFWD X PARLEY RUNNING SHOES{' '}
+                </Typography>
+                <button className="py-2s mt-3 min-h-12 min-w-79 rounded-lg bg-[#232321] px-4">
+                  <Typography
+                    variant="text-cardPrice"
+                    className="font-medium text-white"
+                  >
+                    BUY NOW -
+                    <span className="ml-2 font-medium text-[#FFA52F]">
+                      $250.00
+                    </span>
+                  </Typography>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* shop categories section */}
+      <div className="shop-categories-section mb-15">
+        <div className="container border-b border-b-[#D9D9D9] pb-6">
+          <div className="title flex items-center justify-between">
+            <Typography
+              variant="text-title"
+              className="font-lato text-main font-extrabold text-black"
+            >
+              SHOP FROM <span className="text-[#FCBD01]">TOP CATEGORIES</span>
+            </Typography>
+            <button className="min-h-10 min-w-27.75 rounded-lg bg-[#FCBD01]">
+              <Typography
+                className="text-[13px] font-semibold"
+                variant="text_cardCaption"
+              >
+                VIEW ALL
               </Typography>
             </button>
           </div>
         </div>
-        {/* deals cards */}
-        <div className="deals-cards-container">
-          <div className="deals-card">
-            <div className="card-image">
-              <div className="image-placeholder">
-                <div className="image-block">
-                  <button>
-                    <Typography variant="text-faq" className="text-white">
-                      New
-                    </Typography>
-                  </button>
-                  <Image
-                    src="/assets/img/card-image1.jpg"
-                    alt="cardImg"
-                    width={204}
-                    height={266}
-                  ></Image>
-                </div>
-              </div>
-            </div>
 
-            <div className="card-timing">
-              <Typography variant="text-faq" className="text-black">
-                Flash Deal Ends in 5 Hours !
-              </Typography>
+        {/* shop categories */}
 
-              <progress className="progress">
-                <div className="progress-bar" role="progressbar"></div>
-              </progress>
+        <div className="shop-categories-container">
+          <div className="container flex flex-wrap gap-10 pt-10">
+            {/* shop category 1  */}
+            <div className="shop-categorie flex-column items-center justify-center">
+              <button className="categorie mb-3 flex min-h-36.5 min-w-36.5 items-center justify-center rounded-[100%] bg-[#F5F5F5]">
+                <Image
+                  src={'/assets/img/shop-categorie1.svg'}
+                  className="min-h-26.75 min-w-14.25"
+                  width={14.25}
+                  alt={'shop category '}
+                  height={26.75}
+                />
+              </button>
+              <Typography className="text-center">Mobile</Typography>
             </div>
-            <div className="card-details flex flex-col items-center gap-2">
-              <Typography variant="text-faq" className="text-black">
-                ADIDAS 4DFWD X PARLEY RUNNING SHOES{' '}
+            {/* shop category 2  */}
+            <div className="shop-categorie flex-column items-center justify-center">
+              <button className="categorie mb-3 flex min-h-36.5 min-w-36.5 items-center justify-center rounded-[100%] bg-[#F5F5F5]">
+                <Image
+                  src={'/assets/img/shop-categorie2.svg'}
+                  className="min-h-26.75 min-w-14.25"
+                  width={14.25}
+                  alt={'shop category '}
+                  height={26.75}
+                />
+              </button>
+              <Typography className="text-center">Cosmetics</Typography>
+            </div>
+            {/* shop category 3  */}
+            <div className="shop-categorie flex-column items-center justify-center">
+              <button className="categorie mb-3 flex min-h-36.5 min-w-36.5 items-center justify-center rounded-[100%] bg-[#F5F5F5]">
+                <Image
+                  src={'/assets/img/shop-categorie3.svg'}
+                  className="min-h-26.75 min-w-14.25"
+                  width={14.25}
+                  alt={'shop category '}
+                  height={26.75}
+                />
+              </button>
+              <Typography className="text-center">Electronics</Typography>
+            </div>
+            {/* shop category 4  */}
+            <div className="shop-categorie flex-column items-center justify-center">
+              <button className="categorie mb-3 flex min-h-36.5 min-w-36.5 items-center justify-center rounded-[100%] bg-[#F5F5F5]">
+                <Image
+                  src={'/assets/img/shop-categorie4.svg'}
+                  className="min-h-26.75 min-w-14.25"
+                  width={14.25}
+                  alt={'shop category '}
+                  height={26.75}
+                />
+              </button>
+              <Typography className="text-center">Furniture</Typography>
+            </div>
+            {/* shop category 5  */}
+            <div className="shop-categorie flex-column items-center justify-center">
+              <button className="categorie mb-3 flex min-h-36.5 min-w-36.5 items-center justify-center rounded-[100%] bg-[#F5F5F5]">
+                <Image
+                  src={'/assets/img/shop-categorie5.svg'}
+                  className="min-h-26.75 min-w-14.25"
+                  width={14.25}
+                  alt={'shop category '}
+                  height={26.75}
+                />
+              </button>
+              <Typography className="text-center">Watches</Typography>
+            </div>
+            {/* shop category 6  */}
+            <div className="shop-categorie flex-column items-center justify-center">
+              <button className="categorie mb-3 flex min-h-36.5 min-w-36.5 items-center justify-center rounded-[100%] bg-[#F5F5F5]">
+                <Image
+                  src={'/assets/img/shop-categorie6.svg'}
+                  className="min-h-26.75 min-w-14.25"
+                  width={14.25}
+                  alt={'shop category '}
+                  height={26.75}
+                />
+              </button>
+              <Typography className="text-center">Decor</Typography>
+            </div>
+            {/* shop category 7  */}
+            <div className="shop-categorie flex-column items-center justify-center">
+              <button className="categorie mb-3 flex min-h-36.5 min-w-36.5 items-center justify-center rounded-[100%] bg-[#F5F5F5]">
+                <Image
+                  src={'/assets/img/shop-categorie7.svg'}
+                  className="min-h-26.75 min-w-14.25"
+                  width={14.25}
+                  alt={'shop category '}
+                  height={26.75}
+                />
+              </button>
+              <Typography className="text-center">Accessories</Typography>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* brands slider */}
+      <div className="brands-slider-section">
+        <div className="brands-slider-title">
+          <div className="container mb-20 border-b border-b-[#D9D9D9] pb-10">
+            {/* title */}
+            <div className="title flex items-center justify-between">
+              <Typography
+                variant="text-title"
+                className="font-lato text-main font-extrabold text-black"
+              >
+                TOP <span className="text-[#FCBD01]">ELECTRONIC BRANDS</span>
               </Typography>
-              <button className="">
-                <Typography variant="text-faq" className="text-black">
-                  BUY NOW <span className="line-through">$250.00</span>
+              <button className="min-h-10 min-w-27.75 rounded-lg bg-[#FCBD01]">
+                <Typography
+                  className="text-[13px] font-semibold"
+                  variant="text_cardCaption"
+                >
+                  VIEW ALL
                 </Typography>
               </button>
+            </div>
+          </div>
+
+          {/* brands pagination  */}
+          <div className="brands-pagination">
+            <div className="container">
+              <div className="pagination-container flex justify-between gap-5">
+                <Image
+                  className="pagin1 min-h-56.5 min-w-106.25"
+                  src={'/assets/img/pagin1.svg'}
+                  alt={'iphone'}
+                  width={106.25}
+                  height={56.5}
+                />
+                <Image
+                  className="pagin2 min-h-56.5 min-w-106.25"
+                  src={'/assets/img/pagin2.svg'}
+                  alt={'iphone'}
+                  width={106.25}
+                  height={56.5}
+                />
+                <Image
+                  className="pagin3 min-h-56.5 min-w-106.25"
+                  src={'/assets/img/pagin3.svg'}
+                  alt={'iphone'}
+                  width={106.25}
+                  height={56.5}
+                />
+                <div className="pagination-placeHolder"></div>
+              </div>
+            </div>
+          </div>
+
+          {/* extra buying cards */}
+
+          {/* title */}
+          <div className="container mb-10">
+            <div className="title flex items-center justify-between">
+              <Typography
+                variant="text-title"
+                className="font-lato text-main font-extrabold text-black"
+              >
+                FREQUENTLY BOUGHT TOGETHER{' '}
+              </Typography>
+              <button className="min-h-10 min-w-27.75 rounded-lg bg-[#FCBD01]">
+                <Typography
+                  className="text-[13px] font-semibold"
+                  variant="text_cardCaption"
+                >
+                  VIEW ALL
+                </Typography>
+              </button>
+            </div>
+          </div>
+
+          {/* extra cards */}
+          <div className="container">
+            <div className="extra-cards-container grid-cols-5 grid-rows-5 gap-4">
+              <div className="card1 row-span-2">
+                <Image
+                  src={'/assets/img/extra-card1.svg'}
+                  width={100}
+                  alt={'sony'}
+                  height={100}
+                />
+                <div className="cardTitle">
+                  <div className="overviews">
+                    <div className="stars"></div>
+                    <Typography>(52,677)</Typography>
+                  </div>
+                  <Typography className="text-card-title">
+                    Xbox Series S - 512GB SSD Console with Wireless Controller -
+                    EU Versio...
+                  </Typography>
+
+                  <div className="price">
+                    <Typography className="text-card-price line-through">
+                      ₹865.99
+                    </Typography>
+                    <Typography className="text-card-price">₹442.12</Typography>
+                  </div>
+
+                  <Typography className="text-card-caption">
+                    Games built using the Xbox Series X|S development kit
+                    showcase unparalleled load times, visuals.
+                  </Typography>
+
+                  <div>
+                    <Image
+                      src={'/assets/img/heart-icon.svg'}
+                      alt="heart"
+                      width={10}
+                      height={10}
+                    />
+                    <button className="addToCartButton min-h-12.25 min-w-24.5 rounded-md bg-[#2DA5F3] text-white">
+                      Add to card
+                    </button>
+                    <Image
+                      src={'/assets/img/view-icon.svg'}
+                      alt="view"
+                      width={10}
+                      height={10}
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="card2">
+                <Image
+                  src={'/assets/img/extra-card2.svg'}
+                  width={100}
+                  alt={'sony'}
+                  height={100}
+                />
+              </div>
+              <div className="card3">
+                <Image
+                  src={'/assets/img/extra-card3.svg'}
+                  width={100}
+                  alt={'sony'}
+                  height={100}
+                />
+              </div>
+              <div className="card4">
+                <Image
+                  src={'/assets/img/extra-card4.svg'}
+                  width={100}
+                  alt={'sony'}
+                  height={100}
+                />
+              </div>
+              <div className="card5">
+                <Image
+                  src={'/assets/img/extra-card5.svg'}
+                  width={100}
+                  alt={'sony'}
+                  height={100}
+                />
+              </div>
+              <div className="card6 col-start-2">
+                <Image
+                  src={'/assets/img/extra-card6.svg'}
+                  width={100}
+                  alt={'sony'}
+                  height={100}
+                />
+              </div>
+              <div className="card7 col-start-3">
+                <Image
+                  src={'/assets/img/extra-card7.svg'}
+                  width={100}
+                  alt={'sony'}
+                  height={100}
+                />
+              </div>
+              <div className="card8 col-start-4">
+                <Image
+                  src={'/assets/img/extra-card8.svg'}
+                  width={100}
+                  alt={'sony'}
+                  height={100}
+                />
+              </div>
+              <div className="card9 col-start-5">
+                <Image
+                  src={'/assets/img/extra-card9.svg'}
+                  width={100}
+                  alt={'sony'}
+                  height={100}
+                />
+              </div>
             </div>
           </div>
         </div>

@@ -3,7 +3,7 @@
 import { FC, HTMLProps } from 'react'
 
 import clsx from 'clsx'
-import { Lato, Poppins, Public_Sans } from 'next/font/google'
+import { Lato, Poppins, Public_Sans, Rubik } from 'next/font/google'
 
 interface TypographyProps extends HTMLProps<HTMLParagraphElement> {
   children: React.ReactNode
@@ -24,6 +24,7 @@ interface TypographyProps extends HTMLProps<HTMLParagraphElement> {
     | 'text-cardSale'
     | 'text-welcome'
     | 'font-lato'
+    | 'text_cardCaption'
 }
 
 const lato = Lato({
@@ -38,6 +39,11 @@ const poppins = Poppins({
 
 const publicSans = Public_Sans({
   weight: ['500', '400'],
+  subsets: ['latin'],
+})
+
+const rubik = Rubik({
+  weight: ['400'],
   subsets: ['latin'],
 })
 
@@ -62,6 +68,8 @@ const variantStyles: Record<string, string> = {
   text_cardFixedPrice: clsx('text-cardFixedPrice', `${publicSans.className}`),
   text_cardSale: clsx('text-cardSale', `${publicSans.className}`),
   font_dealCardTitle: clsx('font-lato', `${lato.className}`),
+  text_cardCaption: clsx('text-cardCaption', `${lato.className}`),
+  text_rubik: clsx('rubik', `${rubik.className}`),
 }
 
 export const Typography: FC<TypographyProps> = ({
